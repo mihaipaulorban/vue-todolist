@@ -26,3 +26,5 @@ Per gestire la lista come oggetti ho rappresentato i ToDo all'interno di una var
 - La proprietà `completed`controlla se il Todo é stato fatto o no con i checkbox, usando il `v-model`dentro <input>, che viene collegato a `todo.completed`.
 
 Quando qualcuno aggiunge un nuovo Todo con l'input e il testo inserito, lo stato `completed` viene impostato automaticamente su false e l'oggetto viene aggiunto all'array.
+
+Per far si che i pulsanti funzionino e soprattutto il label funzioni ho collegato all'input type text con il `v-model` il dato `todoText` che quindi sostiuirà ad esso il testo inserito dall'utente, e con il `@click` viene richiamata la funzione `addTodo`, che fa un ciclo, aggiungendo `trim` per eliminare eventuali spaziature, nel quale se il contenuto della stringa è diverso da vuoto, ci pusha dentro un dato text, con all'interno il `todoText` e un valore booleano per completed che di base è `false`, e infine svuota l'input type settandolo di nuovo a vuoto.

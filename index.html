@@ -26,6 +26,71 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- TITOLO -->
+    <h1 class="fw-bold text-center my-4">
+      <span class="text-primary">ToDo</span> List
+    </h1>
+    <div class="container">
+      <label for="addTodo" class="fw-bold m-2 fs-4"
+        >Aggiungi un <span class="text-primary">ToDo</span> alla tua
+        lista</label
+      >
+
+      <!-- INPUT PER I TODO -->
+      <div class="input-group mb-3" id="addTodo">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserisci il testo per il ToDo"
+          aria-label="Inserisci il ToDo"
+          aria-describedby="button-addon2"
+        />
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          id="button-addon2"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+
+      <!-- LISTA DI CHECKBOX -->
+      <ul class="list-group">
+        <li class="list-group-item">
+          <input
+            class="form-check-input me-1"
+            type="checkbox"
+            value=""
+            id="firstCheckbox"
+          />
+          <label class="form-check-label" for="firstCheckbox"
+            >First checkbox</label
+          >
+        </li>
+        <li class="list-group-item">
+          <input
+            class="form-check-input me-1"
+            type="checkbox"
+            value=""
+            id="secondCheckbox"
+          />
+          <label class="form-check-label" for="secondCheckbox"
+            >Second checkbox</label
+          >
+        </li>
+        <li class="list-group-item">
+          <input
+            class="form-check-input me-1"
+            type="checkbox"
+            value=""
+            id="thirdCheckbox"
+          />
+          <label class="form-check-label" for="thirdCheckbox"
+            >Third checkbox</label
+          >
+        </li>
+      </ul>
+    </div>
     <!-- SCRIPT -->
     <script src="script.js"></script>
 

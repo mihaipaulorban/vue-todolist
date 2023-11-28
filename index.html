@@ -70,7 +70,7 @@
               :id="'checkbox_' + index"
               v-model="todo.completed"
             />
-            <label :for="'checkbox_' + index" class="form-check-label"
+            <label :for="'checkbox_' + index" class="form-check-label" :class="{ 'text-decoration-line-through': todo.completed }"
               >{{ todo.text }}</label
             >
             <i class="fa-solid fa-xmark float-end mt-1" @click="deleteTodo"></i>

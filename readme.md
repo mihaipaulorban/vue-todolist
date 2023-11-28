@@ -30,3 +30,5 @@ Quando qualcuno aggiunge un nuovo Todo con l'input e il testo inserito, lo stato
 Per far si che i pulsanti funzionino e soprattutto il label funzioni ho collegato all'input type text con il `v-model` il dato `todoText` che quindi sostiuirà ad esso il testo inserito dall'utente, e con il `@click` viene richiamata la funzione `addTodo`, che fa un ciclo, aggiungendo `trim` per eliminare eventuali spaziature, nel quale se il contenuto della stringa è diverso da vuoto, ci pusha dentro un dato text, con all'interno il `todoText` e un valore booleano per completed che di base è `false`, e infine svuota l'input type settandolo di nuovo a vuoto.
 
 Per la funzione di eliminazione dei Todo invece, ho aggiunto un'icona `x` con FontAwesome e con un `@click` richiama la funzione `deleteTodo(index)` che prende lo scope delll'index dell'array e con `splice` rimuove l'elemento della lista
+
+Per sbarrare il testo quando il dato `completed` è true invece ho aggiunto un v-bind a class per il testo del todo nella quale mi da `text-decoration-line-through` quando `todo.completed`

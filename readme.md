@@ -1,5 +1,7 @@
 # Todolist con Vue JS
 
+## Consegna
+
 Rifare l'esercizio della to do list.
 Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
 
@@ -15,3 +17,12 @@ Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
   Bonus:
   1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
   2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+
+## Logica della webapp
+
+Per gestire la lista come oggetti ho rappresentato i ToDo all'interno di una variabile di nome `todos`, ogni oggetto ha due proprietá: `text` e `completed`.
+
+- La proprietà `text`contiene il testo che viene inserito dall'utende nell'input
+- La proprietà `completed`controlla se il Todo é stato fatto o no con i checkbox, usando il `v-model`dentro <input>, che viene collegato a `todo.completed`.
+
+Quando qualcuno aggiunge un nuovo Todo con l'input e il testo inserito, lo stato `completed` viene impostato automaticamente su false e l'oggetto viene aggiunto all'array.

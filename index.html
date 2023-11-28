@@ -26,75 +26,61 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- TITOLO -->
-    <h1 class="fw-bold text-center my-4">
-      <span class="text-primary">ToDo</span> List
-    </h1>
-    <div class="container">
-      <label for="addTodo" class="fw-bold m-2 fs-4"
-        >Aggiungi un <span class="text-primary">ToDo</span> alla tua
-        lista</label
-      >
-
-      <!-- INPUT PER I TODO -->
-      <div class="input-group mb-3" id="addTodo">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Inserisci il testo per il ToDo"
-          aria-label="Inserisci il ToDo"
-          aria-describedby="button-addon2"
-        />
-        <button
-          class="btn btn-outline-primary"
-          type="button"
-          id="button-addon2"
+    <div id="app">
+      <!-- TITOLO -->
+      <h1 class="fw-bold text-center my-4">
+        <span class="text-primary">ToDo</span> List
+      </h1>
+      <div class="container">
+        <label for="addTodo" class="fw-bold m-2 fs-4"
+          >Aggiungi un <span class="text-primary">ToDo</span> alla tua
+          lista</label
         >
-          <i class="fa-solid fa-plus"></i>
-        </button>
-      </div>
 
-      <!-- LISTA DI CHECKBOX -->
-      <ul class="list-group">
-        <li class="list-group-item">
+        <!-- INPUT PER I TODO -->
+        <div class="input-group mb-3">
           <input
-            class="form-check-input me-1"
-            type="checkbox"
-            value=""
-            id="firstCheckbox"
+            id="addTodo"
+            type="text"
+            class="form-control"
+            placeholder="Inserisci il testo per il ToDo"
+            v-model="todoText"
           />
-          <label class="form-check-label" for="firstCheckbox"
-            >First checkbox</label
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+            id="button-addon2"
+            @click="addTodo"
           >
-        </li>
-        <li class="list-group-item">
-          <input
-            class="form-check-input me-1"
-            type="checkbox"
-            value=""
-            id="secondCheckbox"
-          />
-          <label class="form-check-label" for="secondCheckbox"
-            >Second checkbox</label
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+
+        <!-- LISTA DI CHECKBOX -->
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            v-for="(todo, index) in todos"
+            :key="index"
           >
-        </li>
-        <li class="list-group-item">
-          <input
-            class="form-check-input me-1"
-            type="checkbox"
-            value=""
-            id="thirdCheckbox"
-          />
-          <label class="form-check-label" for="thirdCheckbox"
-            >Third checkbox</label
-          >
-        </li>
-      </ul>
+            <input
+              class="form-check-input me-1"
+              type="checkbox"
+              :id="'checkbox_' + index"
+              v-model="todo.completed"
+            />
+            <label :for="'checkbox_' + index" class="form-check-label"
+              >{{ todo.text }}</label
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-    <!-- SCRIPT -->
-    <script src="script.js"></script>
 
     <!-- VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
   </body>
 </html>

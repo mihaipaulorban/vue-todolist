@@ -64,18 +64,26 @@
             v-for="(todo, index) in todos"
             :key="index"
           >
+
+          <!-- CHECKBOX -->
             <input
               class="form-check-input me-1 me-3"
               type="checkbox"
               :id="'checkbox_' + index"
               v-model="todo.completed"
             />
+
+            <!-- TESTO -->
             <label :for="'checkbox_' + index" class="form-check-label" :class="{ 'text-decoration-line-through': todo.completed }"
               >{{ todo.text }}</label
             >
-            <i class="fa-solid fa-xmark float-end mt-1" @click="deleteTodo"></i>
+
+            <!-- PULSANTE ELIMINA -->
+            <i class="fa-solid fa-xmark float-end mt-1" @click="deleteTodo(index)"></i>
           </li>
         </ul>
+
+        <!-- ALLERT NO TODO -->
         <div class="alert alert-primary" role="alert" v-else>
             Non ci sono ToDo disponibili!
       </div>

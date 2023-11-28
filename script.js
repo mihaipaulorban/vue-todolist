@@ -19,6 +19,9 @@ const myApp = createApp({
         this.todoText = "";
       }
     },
+    deleteTodo(index) {
+      this.todos.splice(index, 1);
+    },
   },
 });
 

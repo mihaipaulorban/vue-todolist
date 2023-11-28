@@ -58,7 +58,7 @@
         </div>
 
         <!-- LISTA DI CHECKBOX -->
-        <ul class="list-group">
+        <ul class="list-group" v-if="todos.length > 0">
           <li
             class="list-group-item"
             v-for="(todo, index) in todos"
@@ -73,9 +73,11 @@
             <label :for="'checkbox_' + index" class="form-check-label"
               >{{ todo.text }}</label
             >
-            <i class="fa-solid fa-xmark float-end mt-1"></i>
+            <i class="fa-solid fa-xmark float-end mt-1" @click="deleteTodo"></i>
           </li>
         </ul>
+        <div class="alert alert-primary" role="alert" v-else>
+            Non ci sono ToDo disponibili!
       </div>
     </div>
 
